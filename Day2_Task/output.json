@@ -1,0 +1,76 @@
+[
+    {
+        "headline": "The soul of a new machine",
+        "category": "GENERAL",
+        "entities": {
+            "companies": [],
+            "percentages": [],
+            "currency": []
+        }
+    },
+    {
+        "headline": "Mashatile urges reset of South Africa–China trade ties to boost value-added exports",
+        "category": "GENERAL",
+        "entities": {
+            "companies": [],
+            "percentages": [],
+            "currency": []
+        }
+    },
+    {
+        "headline": "SecretEATS turns Cape Town apartment dream into global experiential dining brand",
+        "category": "GENERAL",
+        "entities": {
+            "companies": [
+                "Citi"
+            ],
+            "percentages": [],
+            "currency": []
+        }
+    },
+    {
+        "headline": "Making local clothing lekker is about more than just price",
+        "category": "GENERAL",
+        "entities": {
+            "companies": [],
+            "percentages": [],
+            "currency": []
+        }
+    },
+    {
+        "headline": "Government faces pressure to cut fuel levy as US–Iran tensions threaten price hikes",
+        "category": "POLITICS",
+        "entities": {
+            "companies": [],
+            "percentages": [],
+            "currency": []
+        }
+    },
+    {
+        "headline": "Trump says US ‘hottest’ for investors amid record inflows, AI boom",
+        "category": "TECH",
+        "entities": {
+            "companies": [],
+            "percentages": [],
+            "currency": []
+        }
+    },
+    {
+        "headline": "Rubio Predicts Iran Conflict Will End in Weeks, Not Months",
+        "category": "GENERAL",
+        "entities": {
+            "companies": [],
+            "percentages": [],
+            "currency": []
+        }
+    },
+    {
+        "headline": "‘Ready for what may come’: Australia to scour the globe for extra fuel",
+        "category": "GENERAL",
+        "entities": {
+            "companies": [],
+            "percentages": [],
+            "currency": []
+        }
+    }
+]
