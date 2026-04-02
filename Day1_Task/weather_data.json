@@ -1,0 +1,72 @@
+[
+    {
+        "city": "Delhi",
+        "temperature": "24.05 C",
+        "humidity": 60,
+        "weather": "Haze",
+        "time": "2026-03-27 11:17:04"
+    },
+    {
+        "city": "Mumbai",
+        "temperature": "35.99 C",
+        "humidity": 28,
+        "weather": "Smoke",
+        "time": "2026-03-27 11:13:19"
+    },
+    {
+        "city": "Bangalore",
+        "temperature": "31.64 C",
+        "humidity": 29,
+        "weather": "Clear",
+        "time": "2026-03-27 11:22:44"
+    },
+    {
+        "city": "Chennai",
+        "temperature": "31.69 C",
+        "humidity": 62,
+        "weather": "Clouds",
+        "time": "2026-03-27 11:18:52"
+    },
+    {
+        "city": "Kolkata",
+        "temperature": "32.97 C",
+        "humidity": 58,
+        "weather": "Haze",
+        "time": "2026-03-27 11:15:42"
+    },
+    {
+        "city": "Hyderabad",
+        "temperature": "33.23 C",
+        "humidity": 33,
+        "weather": "Clouds",
+        "time": "2026-03-27 11:13:49"
+    },
+    {
+        "city": "Pune",
+        "temperature": "36.75 C",
+        "humidity": 20,
+        "weather": "Clouds",
+        "time": "2026-03-27 11:21:57"
+    },
+    {
+        "city": "Ahmedabad",
+        "temperature": "35.94 C",
+        "humidity": 25,
+        "weather": "Clear",
+        "time": "2026-03-27 11:16:55"
+    },
+    {
+        "city": "Surat",
+        "temperature": "32.99 C",
+        "humidity": 43,
+        "weather": "Clear",
+        "time": "2026-03-27 11:12:08"
+    },
+    {
+        "city": "Jaipur",
+        "temperature": "30.62 C",
+        "humidity": 30,
+        "weather": "Haze",
+        "time": "2026-03-27 11:19:18"
+    }
+]
