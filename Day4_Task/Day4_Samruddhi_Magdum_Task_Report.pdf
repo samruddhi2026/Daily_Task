@@ -1,0 +1,126 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 900] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 2775 >>
+stream
+BT
+/F1 16 Tf
+72 760 Td
+(Task Report - Day 4) Tj
+0 -18 Td
+() Tj
+0 -18 Td
+(Title) Tj
+0 -18 Td
+(TASK -04: Developing a Resume Screening and Information Extraction System) Tj
+0 -18 Td
+() Tj
+0 -18 Td
+(Objective) Tj
+0 -18 Td
+(The objective of Task 4 is to build a simple resume screening system that reads resume text) Tj
+0 -18 Td
+(from direct input or supported files and extracts structured data in JSON format. The program) Tj
+0 -18 Td
+(identifies the candidate name, extracts the mentioned skills, and decides eligibility based on) Tj
+0 -18 Td
+(predefined strong technical skills and basic tools.) Tj
+0 -18 Td
+() Tj
+0 -18 Td
+(Libraries Used) Tj
+0 -18 Td
+(1. json) Tj
+0 -18 Td
+(Used to display the final extracted result in valid JSON format.) Tj
+0 -18 Td
+(2. os) Tj
+0 -18 Td
+(Used to handle file paths and check whether the resume file exists.) Tj
+0 -18 Td
+(3. re) Tj
+0 -18 Td
+(Used for matching the candidate name from the resume text.) Tj
+0 -18 Td
+(4. PyPDF2) Tj
+0 -18 Td
+(Used to read text content from PDF resume files.) Tj
+0 -18 Td
+(5. docx) Tj
+0 -18 Td
+(Used to read text content from DOCX resume files.) Tj
+0 -18 Td
+() Tj
+0 -18 Td
+(Errors) Tj
+0 -18 Td
+(1. Gemini API Response Error) Tj
+0 -18 Td
+(Issue: The earlier version depended on an API response that did not return the candidates key.) Tj
+0 -18 Td
+(Solution: The API dependency was removed and the project was changed to a local rule-based script.) Tj
+0 -18 Td
+(2. File Not Found Error) Tj
+0 -18 Td
+(Issue: The entered resume file name did not exist in the working directory.) Tj
+0 -18 Td
+(Solution: File existence checking was added and the script now stops with a clear message.) Tj
+0 -18 Td
+(3. PDF Input Handling) Tj
+0 -18 Td
+(Issue: Resume files in PDF format were not supported in the initial simple text input flow.) Tj
+0 -18 Td
+(Solution: PDF reading support was added using PyPDF2.) Tj
+0 -18 Td
+(4. Eligibility Rule Mismatch) Tj
+0 -18 Td
+(Issue: The output initially used python_fit instead of the required eligibility field.) Tj
+0 -18 Td
+(Solution: The logic was updated to return Eligible or Not Eligible based on the requested rules.) Tj
+0 -18 Td
+(5. Prompt and Output Format Updates) Tj
+0 -18 Td
+(Issue: The requested output rules changed multiple times during development.) Tj
+0 -18 Td
+(Solution: The script prompt template and local screening logic were updated to match the latest format.) Tj
+0 -18 Td
+() Tj
+0 -18 Td
+(Output) Tj
+0 -18 Td
+(The final script accepts text input or txt, pdf, and docx files and returns JSON in this format:) Tj
+0 -18 Td
+({"name": "string", "skills": ["list of skills"], "eligibility": "Eligible / Not Eligible"}) Tj
+0 -18 Td
+() Tj
+0 -18 Td
+(Sample Output) Tj
+0 -18 Td
+({"name": "Samruddhi Magdum", "skills": ["Python", "Java", "C++"], "eligibility": "Eligible"}) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000003067 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+3137
+%%EOF
