@@ -65,7 +65,7 @@ Response Generation
 ## 📂 Project Structure
 
 ```
-urban_edge_stylist/
+capstoneproject/Day11_Task/
 │
 ├── data.json              # Dataset with fashion items
 ├── vector_store.py       # Builds FAISS index
