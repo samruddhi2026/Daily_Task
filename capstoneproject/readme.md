@@ -142,9 +142,6 @@ pip install faiss-cpu sentence-transformers numpy streamlit requests python-dote
 
 The project reads `GEMINI_API_KEY` from `D:\Daily_Task\.env`:
 
-```env
-GEMINI_API_KEY=AIzaSyCgr_V_Mrv8My6TDLZKTsR6MJ3x0NF9zbo
-```
 
 The key is **automatically loaded** by `Day12_Task/main.py` when generating responses.
 
