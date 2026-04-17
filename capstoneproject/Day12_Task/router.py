@@ -2,7 +2,8 @@ class IntentRouter:
     def route(self, query):
         query = query.lower()
 
-        if "outfit" in query or "style" in query or "wear" in query:
+        recommendation_keywords = ["outfit", "style", "wear", "vibe", "minimal", "look", "fashion", "clothes", "wardrobe", "party", "top", "bottom", "piece", "ensemble"]
+        if any(word in query for word in recommendation_keywords):
             return "recommendation"
 
         elif "trend" in query:

@@ -4,119 +4,118 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import streamlit as st
-from Day12_Task.main import generate_response
-from Day11_Task.retriever import retrieve
+from Day12_Task.main import generate_response, hf_generate_image
+import json
 
 st.set_page_config(page_title="Urban Edge Stylist", page_icon="👗", layout="wide")
 
 page_style = """
 <style>
-body {
-    background: linear-gradient(135deg, #f7f1ee 0%, #fbfbff 40%, #ede4f7 100%);
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap');
+
+html, body, [data-testid="stAppViewContainer"] {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
 }
+
 main .block-container {
-    padding: 2rem 2rem 2rem 2rem;
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 36px;
-    box-shadow: 0 35px 80px rgba(125, 91, 214, 0.12);
+    padding: 3rem 4rem;
+    background-color: rgba(255, 255, 255, 0.98);
+    border-radius: 40px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
 }
+
 section[data-testid="stSidebar"] > div:first-child {
-    background: linear-gradient(180deg, #fff9f4 0%, #f3ecff 100%);
-    border-radius: 30px;
-    padding: 1.5rem;
-    border: 1px solid rgba(145, 103, 236, 0.16);
+    background: #ffffff;
+    border-radius: 0;
+    padding: 2rem;
+    border-right: 1px solid #eee;
 }
+
 .stButton>button {
-    background: linear-gradient(135deg, #8f64ff 0%, #5a2d9e 100%);
+    background: #111;
     color: white;
     border: none;
-    border-radius: 22px;
-    padding: 1rem 1.6rem;
+    border-radius: 12px;
+    padding: 0.8rem 2rem;
     font-size: 1rem;
     font-weight: 700;
-    box-shadow: 0 18px 30px rgba(90, 45, 158, 0.18);
+    transition: all 0.3s ease;
 }
+
 .stButton>button:hover {
-    background: linear-gradient(135deg, #7b49db 0%, #4c1f95 100%);
+    background: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
+
 .stTextInput>div>div>input {
-    border: 2px solid rgba(186, 136, 255, 0.35);
-    border-radius: 24px;
-    padding: 1rem 1.4rem;
-    background: #fff8ff;
-    color: #2a1651;
-}
-.css-1o9u4ze {
-    padding: 1rem 1rem 1.5rem 1rem;
-}
-h1, h2, h3, h4 {
-    color: #2f1453;
-}
-.page-banner {
-    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(245,230,255,0.95));
-    border-radius: 30px;
-    padding: 1.7rem 2rem;
-    margin-bottom: 1.6rem;
-    border: 1px solid rgba(156, 112, 255, 0.15);
-}
-.page-banner h1 {
-    margin-bottom: 0.25rem;
-}
-.page-banner p {
-    margin: 0;
-    color: #5a3f8d;
-}
-.outfit-card {
-    background: linear-gradient(180deg, #ffffff 0%, #fcf6ff 100%);
-    border-radius: 28px;
-    padding: 1.4rem;
-    margin-bottom: 1rem;
-    border: 1px solid rgba(142, 80, 231, 0.18);
-    box-shadow: 0 24px 40px rgba(143, 84, 242, 0.08);
-}
-.outfit-card h3 {
-    margin-bottom: 0.5rem;
-}
-.outfit-card p {
-    margin: 0.25rem 0;
-    color: #5b4479;
-}
-.outfit-badge {
-    display: inline-block;
-    background: #fdf1ff;
-    color: #6e49b5;
-    border-radius: 999px;
-    padding: 0.4rem 0.95rem;
-    font-size: 0.9rem;
-    font-weight: 700;
-    margin-top: 0.7rem;
-    letter-spacing: 0.02em;
-}
-.mantra {
-    background: rgba(255,255,255,0.9);
-    border-radius: 24px;
-    padding: 1.2rem 1.4rem;
-    border: 1px dashed rgba(145, 103, 236, 0.24);
-    margin-bottom: 1.5rem;
-}
-.mantra p {
-    margin: 0;
-    color: #4f3172;
-}
-.display-window {
-    background: linear-gradient(180deg, #fff8f9 0%, #f5effd 100%);
-    border: 1px solid rgba(137, 98, 221, 0.18);
-    border-radius: 32px;
-    padding: 1.5rem;
-}
-.display-title {
+    border: 1px solid #e0e0e0;
+    border-radius: 14px;
+    padding: 0.9rem 1.2rem;
     font-size: 1.1rem;
+}
+
+.page-banner {
+    background: #000;
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    margin-bottom: 2.5rem;
+    color: white;
+    text-align: center;
+}
+
+.page-banner h1 {
+    font-size: 3.5rem;
     font-weight: 700;
-    color: #3d1f63;
-    margin-bottom: 0.8rem;
+    letter-spacing: -0.05em;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.page-banner p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.outfit-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 2rem;
+    border: 1px solid #f0f0f0;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.outfit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+}
+
+.outfit-badge {
+    background: #000;
+    color: #fff;
+    border-radius: 4px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.mantra {
+    border-left: 4px solid #111;
+    padding: 1rem 1.5rem;
+    background: #f9f9f9;
+    margin-bottom: 2rem;
+    font-style: italic;
+    color: #444;
 }
 </style>
 """
+
 
 st.markdown(page_style, unsafe_allow_html=True)
 
@@ -133,51 +132,110 @@ with st.sidebar:
     st.markdown("### Styling tools")
     st.write("- Semantic wardrobe search")
     st.write("- FAISS vector retrieval")
-    st.write("- Style metadata matching")
+    st.write("- Mannequin Catalog Mode")
     st.markdown("---")
-    st.markdown("### Display rack")
-    st.write("Use the clothing rack to preview curated fashion recommendations.")
-    st.caption("Built using AI • RAG • FAISS")
+    st.caption("Built using AI • RAG • Pollinations")
 
 st.markdown(
     """
     <div class='page-banner'>
         <h1>👗 Urban Edge Stylist</h1>
-        <p>Your interactive wardrobe assistant that blends fashion mood, semantic search, and a mannequin-style display.</p>
+        <p>Your interactive wardrobe assistant: Single Outfit Curation & Studio Mannequin Display.</p>
     </div>
     """,
     unsafe_allow_html=True,
 )
 
-query = st.text_input("Enter your style (e.g., minimalist outfit)")
+with st.form("style_vibe_form", clear_on_submit=False):
+    query = st.text_input("Enter your style vibe (e.g., minimalist office wear)")
+    
+    st.markdown(
+        """
+        <div class='mantra'>
+            <p>"From the wardrobe to the runway — Choose a vibe, and let the AI mannequin render your style."</p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
-st.markdown(
-    """
-    <div class='mantra'>
-        <p>"From the wardrobe to the runway — choose a style vibe and let the mannequin rack suggest your next outfit."</p>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+    submit = st.form_submit_button("Get Recommendation")
 
-if st.button("✨ Get Recommendation"):
+if submit:
     if query:
-        results = retrieve(query)
-        st.markdown("<div class='display-window'><div class='display-title'>✨ Outfit Display Window</div></div>", unsafe_allow_html=True)
-        col1, col2 = st.columns(2)
-        for i, item in enumerate(results, 1):
-            target_col = col1 if i % 2 else col2
-            target_col.markdown(
-                f"""
-                <div class='outfit-card'>
-                    <h3>{i}. {item['text'].title()}</h3>
-                    <p><strong>Style:</strong> {item.get('style_vibe', 'unknown').title()}</p>
-                    <p><strong>Category:</strong> {item.get('category', 'fashion')}</p>
-                    <span class='outfit-badge'>Mannequin Style</span>
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
+        # Initialize session state for outfit if not present
+        outfit_data = None
+        img_placeholder_html = ""
+
+        with st.status("Creative Stylist at work...", expanded=True) as status:
+            st.write("Analyzing your wardrobe...")
+            raw_response = generate_response(query)
+            
+            try:
+                data = json.loads(raw_response)
+                outfit_data = data.get("outfit")
+                image_prompt = data.get("image_prompt")
+            except:
+                st.write(raw_response) # Fallback
+
+            if outfit_data:
+                st.write("Curating your perfect look...")
+                st.write(f"Rendering: {outfit_data['style']}...")
+                img_data, _ = hf_generate_image(image_prompt)
+                
+                st.write("Capturing final studio shot...")
+                status.update(label="Studio Mannequin Ready!", state="complete", expanded=False)
+                
+                if img_data:
+                    img_placeholder_html = f'<img src="data:image/jpeg;base64,{img_data}" style="width:100%; border-radius:30px; box-shadow: 0 15px 35px rgba(0,0,0,0.15);">'
+            else:
+                status.update(label=" Stylist encountered a glitch", state="error")
+
+        # RENDER OUTSIDE STATUS CONTAINER (Fixes "Showing Code" Bug)
+        if outfit_data:
+            st.markdown(f"## {outfit_data['style']}")
+            
+            # Professional Catalog Layout: Image Left, Details Right
+            col_img, col_txt = st.columns([1, 1])
+            
+            with col_img:
+                if img_placeholder_html:
+                    st.markdown(img_placeholder_html, unsafe_allow_html=True)
+                else:
+                    st.warning("Studio camera was slightly out of focus. Please try again!")
+            
+            with col_txt:
+                items_html = "<ul>"
+                
+                # Intelligent One-Piece Detection
+                top = outfit_data.get("topwear", "").lower()
+                bottom = outfit_data.get("bottomwear", "").lower()
+                is_one_piece = bottom == "none" and any(x in top for x in ["gown", "sari", "dress", "jumpsuit", "lehenga", "suit", "set"])
+
+                for cat in ["topwear", "bottomwear", "layer", "footwear", "accessories"]:
+                    val = outfit_data.get(cat)
+                    if val and val.lower() != "none":
+                        # Dynamic Labeling
+                        label = cat.title()
+                        if is_one_piece and cat == "topwear":
+                            label = "Outfit"
+                        
+                        items_html += f"<li><strong style='color:#6a4da8;'>{label}:</strong> {val}</li>"
+                items_html += "</ul>"
+
+                st.markdown(
+                    f"""
+                    <div class='outfit-card' style='height: 100%;'>
+                        <p style='font-style: italic; color: #5a3f8d; margin-bottom: 20px;'>A high-fidelity studio curation based on your mood: "{query}".</p>
+                        <hr style='border: 0; border-top: 1px solid rgba(0,0,0,0.05); margin-bottom: 15px;'>
+                        {items_html}
+                        <br>
+                        <span class='outfit-badge'> Studio Mannequin Edition</span>
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
+        elif query:
+            st.warning("Could not structure the recommendation. Try a different vibe!")
     else:
         st.warning("Please enter a query to open your wardrobe.")
 

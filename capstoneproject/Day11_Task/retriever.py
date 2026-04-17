@@ -26,11 +26,4 @@ def retrieve(query, k=3):
 
     return results
 
-
-
-if __name__ == "__main__":
-    query = "minimalist outfit"
-    results = retrieve(query)
-
-    for item in results:
-        print(item)
+
