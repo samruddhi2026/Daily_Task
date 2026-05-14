@@ -1,0 +1,16 @@
+Subject,Age,Gender,Height_cm,Weight_kg,Smoker,Coffee_Today,Cups_Coffee,Exercise_Today,Exercise_Minutes,Sleep_Hours,Hydration_Liters,Workload,Self_Stress,Mood
+S2,20,Male,187,73,No,Yes,3,Yes,35,8.5,2.3,High,High,Tired
+S3,30,Male,163,58,No,No,0,No,0,7.7,1.2,Medium,High,Excited
+S4,20,Male,182,77,Yes,No,0,Yes,106,9.0,3.4,High,Medium,Excited
+S5,25,Male,160,76,Yes,Yes,3,No,0,5.0,1.6,Medium,Medium,Neutral
+S6,26,Female,155,47,No,Yes,4,Yes,95,4.7,1.2,Medium,High,Tired
+S7,31,Female,179,67,No,Yes,2,Yes,91,5.4,3.5,Medium,Low,Happy
+S8,29,Female,188,85,No,Yes,1,No,0,7.9,1.0,High,High,Stressed
+S9,33,Male,182,68,Yes,No,0,Yes,41,7.0,3.0,Low,Medium,Stressed
+S10,35,Male,157,74,Yes,Yes,3,No,0,4.8,3.9,Low,Low,Neutral
+S11,34,Male,150,64,Yes,No,0,No,0,4.9,2.3,Medium,Low,Neutral
+S13,27,Male,166,47,Yes,Yes,3,No,0,4.5,1.8,High,Low,Stressed
+S14,28,Male,157,71,No,No,0,Yes,94,7.4,1.4,Medium,Low,Tired
+S15,25,Male,176,95,No,No,0,Yes,66,8.5,2.3,Medium,Medium,Tired
+S16,24,Male,167,77,No,No,0,Yes,109,7.6,1.1,Medium,High,Tired
+S17,29,Female,158,68,Yes,Yes,3,Yes,26,7.2,2.8,Medium,High,Tired

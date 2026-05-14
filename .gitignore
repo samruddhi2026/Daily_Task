@@ -1,1 +1,4 @@
 .env
+*.csv
+stress_detection_system/backend/data/
+stress_detection_system/backend/app/data/
