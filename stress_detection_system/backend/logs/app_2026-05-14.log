@@ -1,0 +1,1641 @@
+2026-05-14 12:53:32.217 | INFO     | app.main:log_requests:42 - request completed in 5.73 ms
+2026-05-14 12:53:32.282 | INFO     | app.main:log_requests:42 - request completed in 6.93 ms
+2026-05-14 12:53:32.382 | INFO     | app.ml.inference:load_artifacts:38 - Loaded inference artifacts from C:\Users\Acer\AppData\Local\Temp\pytest-of-Acer\pytest-6\test_predict_json0\models\feature_pipeline.pkl and C:\Users\Acer\AppData\Local\Temp\pytest-of-Acer\pytest-6\test_predict_json0\models\best_model.pkl
+2026-05-14 12:53:32.422 | WARNING  | app.preprocessing.peak_detection:detect_r_peaks:72 - HeartPy peak detection failed: 
+----------------
+Could not determine best fit for given signal. Please check the source signal.
+ Probable causes:
+- detected heart rate falls outside of bpmmin<->bpmmax constraints
+- no detectable heart rate present in signal
+- very noisy signal (consider filtering and scaling)
+If you're sure the signal contains heartrate data, consider filtering and/or scaling first.
+----------------
+
+2026-05-14 12:53:32.499 | INFO     | app.main:log_requests:42 - request completed in 137.49 ms
+2026-05-14 12:53:32.594 | INFO     | app.loaders.wesad_loader:list_subject_ids:75 - Discovered 1 WESAD subjects: ['S99']
+2026-05-14 14:06:33.741 | INFO     | app.main:log_requests:42 - request completed in 5.88 ms
+2026-05-14 14:06:33.817 | INFO     | app.main:log_requests:42 - request completed in 7.68 ms
+2026-05-14 14:06:33.902 | INFO     | app.ml.inference:load_artifacts:38 - Loaded inference artifacts from C:\Users\Acer\AppData\Local\Temp\pytest-of-Acer\pytest-7\test_predict_json0\models\feature_pipeline.pkl and C:\Users\Acer\AppData\Local\Temp\pytest-of-Acer\pytest-7\test_predict_json0\models\best_model.pkl
+2026-05-14 14:06:33.941 | WARNING  | app.preprocessing.peak_detection:detect_r_peaks:72 - HeartPy peak detection failed: 
+----------------
+Could not determine best fit for given signal. Please check the source signal.
+ Probable causes:
+- detected heart rate falls outside of bpmmin<->bpmmax constraints
+- no detectable heart rate present in signal
+- very noisy signal (consider filtering and scaling)
+If you're sure the signal contains heartrate data, consider filtering and/or scaling first.
+----------------
+
+2026-05-14 14:06:34.063 | INFO     | app.main:log_requests:42 - request completed in 181.32 ms
+2026-05-14 14:06:34.218 | INFO     | app.loaders.wesad_loader:list_subject_ids:75 - Discovered 1 WESAD subjects: ['S99']
+2026-05-14 14:18:24.151 | ERROR    | app.middleware.error_handler:_inf:60 - Inference error: ECG sequence too short for inference
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\multiprocessing\spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               │     │   └ 328
+               │     └ 3
+               └ <function _main at 0x00000254BB190EE0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\multiprocessing\spawn.py", line 129, in _main
+    return self._bootstrap(parent_sentinel)
+           │    │          └ 328
+           │    └ <function BaseProcess._bootstrap at 0x00000254BB087370>
+           └ <SpawnProcess name='SpawnProcess-1' parent=18728 started>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+    │    └ <function BaseProcess.run at 0x00000254BB0869E0>
+    └ <SpawnProcess name='SpawnProcess-1' parent=18728 started>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {'config': <uvicorn.config.Config object at 0x00000254BAC1B790>, 'target': <bound method Server.run of <uvicorn.server.Server...
+    │    │        │    │        └ <SpawnProcess name='SpawnProcess-1' parent=18728 started>
+    │    │        │    └ ()
+    │    │        └ <SpawnProcess name='SpawnProcess-1' parent=18728 started>
+    │    └ <function subprocess_started at 0x00000254BD516830>
+    └ <SpawnProcess name='SpawnProcess-1' parent=18728 started>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\uvicorn\_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    │              └ [<socket.socket fd=384, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 8000)>]
+    └ <bound method Server.run of <uvicorn.server.Server object at 0x00000254BAC1B760>>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ [<socket.socket fd=384, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 8000)>]
+           │       │   │    └ <function Server.serve at 0x00000254BD4EF250>
+           │       │   └ <uvicorn.server.Server object at 0x00000254BAC1B760>
+           │       └ <function run at 0x00000254BCDEB490>
+           └ <module 'asyncio' from 'C:\\Users\\Acer\\AppData\\Local\\Programs\\Python\\Python310\\lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object Server.serve at 0x00000254BD671380>
+           │    └ <function BaseEventLoop.run_until_complete at 0x00000254BCDF0EE0>
+           └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 636, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x00000254BCDF0E50>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 603, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x00000254BCDF2950>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1909, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000254BCD52170>
+    └ <Handle Task.task_wakeup(<Future finis...0254DD26B2E0>>)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finis...0254DD26B2E0>>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finis...0254DD26B2E0>>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finis...0254DD26B2E0>>)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+          │    │   │      │                      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x00000254DD2D2E60>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x00000254DD2D2950>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.cors.CORSMiddleware object at 0x00000254DD1F6B60>
+          └ <starlette.middleware.base.BaseHTTPMiddleware object at 0x00000254DD1F6BC0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+          │    │               │      │        │                     └ Headers({'host': '127.0.0.1:8000', 'connection': 'close', 'content-length': '877', 'sec-ch-ua-platform': '"Windows"', 'user-a...
+          │    │               │      │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x00000254DD2D2E60>
+          │    │               │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x00000254DD2D2950>
+          │    │               └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <function CORSMiddleware.simple_response at 0x00000254BE711240>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x00000254DD1F6B60>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+          │    │   │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x00000254DD1F6B60...
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x00000254DD2D2950>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x00000254DD1F7820>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x00000254DD1F6B60>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x00000254DD1F6B60...
+          │                            │    │    │     │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x00000254DD2D2950>
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x00000254DD280D60>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x00000254DD271180>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x00000254DD1F7820>
+          └ <function wrap_app_handling_exceptions at 0x00000254BE6529E0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000254DD337BE0>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x00000254DD2D2950>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <fastapi.routing.APIRouter object at 0x00000254DD271180>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000254DD337BE0>
+          │    │                │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x00000254DD2D2950>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x00000254DD271180>>
+          └ <fastapi.routing.APIRouter object at 0x00000254DD271180>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000254DD337BE0>
+          │     │      │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x00000254DD2D2950>
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │     └ <function Route.handle at 0x00000254BE680040>
+          └ APIRoute(path='/api/v1/upload', name='upload_ecg_csv', methods=['POST'])
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000254DD337BE0>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x00000254DD2D2950>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <function request_response.<locals>.app at 0x00000254DD2D1FC0>
+          └ APIRoute(path='/api/v1/upload', name='upload_ecg_csv', methods=['POST'])
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000254DD337BE0>
+          │                            │    │        │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x00000254DD2D2950>
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x00000254DD283D00>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x00000254DD337C70>
+          └ <function wrap_app_handling_exceptions at 0x00000254BE6529E0>
+
+> File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000254DD337D00>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x00000254DD2D2950>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x00000254DD337C70>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+                     │ └ <starlette.requests.Request object at 0x00000254DD283D00>
+                     └ <function get_request_handler.<locals>.app at 0x00000254DD2D1F30>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x00000254BE681B40>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'inference': <app.ml.inference.StressInference object at 0x00000254DD26B2E0>, 'file': UploadFile(filename='sample.csv', size...
+                 │         └ <function upload_ecg_csv at 0x00000254DD2A1360>
+                 └ Dependant(path_params=[], query_params=[], header_params=[], cookie_params=[], body_params=[ModelField(field_info=File(Pydant...
+
+  File "D:\Daily_Task\stress_detection_system\backend\app\api\routes\upload.py", line 36, in upload_ecg_csv
+    return service.predict_ecg(ecg.tolist(), fs)
+           │       │           │   │         └ 700.0
+           │       │           │   └ <method 'tolist' of 'numpy.ndarray' objects>
+           │       │           └ array([0.12, 0.15, 0.18, 0.22, 0.3 , 0.48, 0.92, 1.35, 0.88, 0.42, 0.18,
+           │       │                    0.1 , 0.08, 0.11, 0.14, 0.19, 0.25, 0.52, 1.0...
+           │       └ <function PredictionService.predict_ecg at 0x00000254DD2A0550>
+           └ <app.services.prediction_service.PredictionService object at 0x00000254DD268CD0>
+
+  File "D:\Daily_Task\stress_detection_system\backend\app\services\prediction_service.py", line 19, in predict_ecg
+    raise InferenceError("ECG sequence too short for inference")
+          └ <class 'app.exceptions.custom_exceptions.InferenceError'>
+
+app.exceptions.custom_exceptions.InferenceError: ECG sequence too short for inference
+2026-05-14 14:18:24.248 | INFO     | app.main:log_requests:42 - request completed in 206.86 ms
+2026-05-14 14:29:13.487 | ERROR    | app.middleware.error_handler:_inf:60 - Inference error: ECG too short: received 48 samples but need at least 1400 (about 2 seconds at 700 Hz). Use a longer CSV, or set 'Sampling rate (Hz)' to the rate at which your samples were actually recorded (if the rate is too high, the backend thinks the clip is shorter than it is).
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\multiprocessing\spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               │     │   └ 364
+               │     └ 3
+               └ <function _main at 0x0000024C8D1A0EE0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\multiprocessing\spawn.py", line 129, in _main
+    return self._bootstrap(parent_sentinel)
+           │    │          └ 364
+           │    └ <function BaseProcess._bootstrap at 0x0000024C8D0C7370>
+           └ <SpawnProcess name='SpawnProcess-1' parent=16412 started>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+    │    └ <function BaseProcess.run at 0x0000024C8D0C69E0>
+    └ <SpawnProcess name='SpawnProcess-1' parent=16412 started>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {'config': <uvicorn.config.Config object at 0x0000024C8CC5B790>, 'target': <bound method Server.run of <uvicorn.server.Server...
+    │    │        │    │        └ <SpawnProcess name='SpawnProcess-1' parent=16412 started>
+    │    │        │    └ ()
+    │    │        └ <SpawnProcess name='SpawnProcess-1' parent=16412 started>
+    │    └ <function subprocess_started at 0x0000024C8F526830>
+    └ <SpawnProcess name='SpawnProcess-1' parent=16412 started>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\uvicorn\_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    │              └ [<socket.socket fd=388, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 8000)>]
+    └ <bound method Server.run of <uvicorn.server.Server object at 0x0000024C8CC5B760>>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ [<socket.socket fd=388, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 8000)>]
+           │       │   │    └ <function Server.serve at 0x0000024C8F4FF250>
+           │       │   └ <uvicorn.server.Server object at 0x0000024C8CC5B760>
+           │       └ <function run at 0x0000024C8EDDB490>
+           └ <module 'asyncio' from 'C:\\Users\\Acer\\AppData\\Local\\Programs\\Python\\Python310\\lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object Server.serve at 0x0000024C8F681380>
+           │    └ <function BaseEventLoop.run_until_complete at 0x0000024C8EDE0EE0>
+           └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 636, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x0000024C8EDE0E50>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 603, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000024C8EDE2950>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1909, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x0000024C8ED42170>
+    └ <Handle Task.task_wakeup(<Future finis...024CAF31B070>>)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finis...024CAF31B070>>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finis...024CAF31B070>>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finis...024CAF31B070>>)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+          │    │   │      │                      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x0000024CAF382D40>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000024CAF382830>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.cors.CORSMiddleware object at 0x0000024CAF2A7670>
+          └ <starlette.middleware.base.BaseHTTPMiddleware object at 0x0000024CAF2A6C80>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+          │    │               │      │        │                     └ Headers({'host': '127.0.0.1:8000', 'connection': 'close', 'content-length': '877', 'sec-ch-ua-platform': '"Windows"', 'user-a...
+          │    │               │      │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x0000024CAF382D40>
+          │    │               │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000024CAF382830>
+          │    │               └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <function CORSMiddleware.simple_response at 0x0000024C90721240>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x0000024CAF2A7670>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+          │    │   │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x0000024CAF2A7670...
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000024CAF382830>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000024CAF2A6B90>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x0000024CAF2A7670>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x0000024CAF2A7670...
+          │                            │    │    │     │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000024CAF382830>
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x0000024CAF32CD90>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x0000024CAF3211B0>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000024CAF2A6B90>
+          └ <function wrap_app_handling_exceptions at 0x0000024C906629E0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000024CAF3E7BE0>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000024CAF382830>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <fastapi.routing.APIRouter object at 0x0000024CAF3211B0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000024CAF3E7BE0>
+          │    │                │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000024CAF382830>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x0000024CAF3211B0>>
+          └ <fastapi.routing.APIRouter object at 0x0000024CAF3211B0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000024CAF3E7BE0>
+          │     │      │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000024CAF382830>
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │     └ <function Route.handle at 0x0000024C90690040>
+          └ APIRoute(path='/api/v1/upload', name='upload_ecg_csv', methods=['POST'])
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000024CAF3E7BE0>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000024CAF382830>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <function request_response.<locals>.app at 0x0000024CAF381EA0>
+          └ APIRoute(path='/api/v1/upload', name='upload_ecg_csv', methods=['POST'])
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000024CAF3E7BE0>
+          │                            │    │        │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000024CAF382830>
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x0000024CAF32E2F0>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x0000024CAF3E7C70>
+          └ <function wrap_app_handling_exceptions at 0x0000024C906629E0>
+
+> File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000024CAF3E7D00>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000024CAF382830>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x0000024CAF3E7C70>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+                     │ └ <starlette.requests.Request object at 0x0000024CAF32E2F0>
+                     └ <function get_request_handler.<locals>.app at 0x0000024CAF381E10>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x0000024C90691B40>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'inference': <app.ml.inference.StressInference object at 0x0000024CAF31B070>, 'file': UploadFile(filename='sample.csv', size...
+                 │         └ <function upload_ecg_csv at 0x0000024CAF351240>
+                 └ Dependant(path_params=[], query_params=[], header_params=[], cookie_params=[], body_params=[ModelField(field_info=File(Pydant...
+
+  File "D:\Daily_Task\stress_detection_system\backend\app\api\routes\upload.py", line 36, in upload_ecg_csv
+    return service.predict_ecg(ecg.tolist(), fs)
+           │       │           │   │         └ 700.0
+           │       │           │   └ <method 'tolist' of 'numpy.ndarray' objects>
+           │       │           └ array([0.12, 0.15, 0.18, 0.22, 0.3 , 0.48, 0.92, 1.35, 0.88, 0.42, 0.18,
+           │       │                    0.1 , 0.08, 0.11, 0.14, 0.19, 0.25, 0.52, 1.0...
+           │       └ <function PredictionService.predict_ecg at 0x0000024CAF350430>
+           └ <app.services.prediction_service.PredictionService object at 0x0000024CAF318C10>
+
+  File "D:\Daily_Task\stress_detection_system\backend\app\services\prediction_service.py", line 21, in predict_ecg
+    raise InferenceError(
+          └ <class 'app.exceptions.custom_exceptions.InferenceError'>
+
+app.exceptions.custom_exceptions.InferenceError: ECG too short: received 48 samples but need at least 1400 (about 2 seconds at 700 Hz). Use a longer CSV, or set 'Sampling rate (Hz)' to the rate at which your samples were actually recorded (if the rate is too high, the backend thinks the clip is shorter than it is).
+2026-05-14 14:29:13.751 | INFO     | app.main:log_requests:42 - request completed in 314.45 ms
+2026-05-14 14:31:18.018 | ERROR    | app.middleware.error_handler:_inf:60 - Inference error: Missing model artifacts. Train first. Expected models\feature_pipeline.pkl and models\best_model.pkl.
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\multiprocessing\spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               │     │   └ 364
+               │     └ 3
+               └ <function _main at 0x0000022A85B50EE0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\multiprocessing\spawn.py", line 129, in _main
+    return self._bootstrap(parent_sentinel)
+           │    │          └ 364
+           │    └ <function BaseProcess._bootstrap at 0x0000022A85A87370>
+           └ <SpawnProcess name='SpawnProcess-4' parent=16412 started>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+    │    └ <function BaseProcess.run at 0x0000022A85A869E0>
+    └ <SpawnProcess name='SpawnProcess-4' parent=16412 started>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {'config': <uvicorn.config.Config object at 0x0000022A8561B790>, 'target': <bound method Server.run of <uvicorn.server.Server...
+    │    │        │    │        └ <SpawnProcess name='SpawnProcess-4' parent=16412 started>
+    │    │        │    └ ()
+    │    │        └ <SpawnProcess name='SpawnProcess-4' parent=16412 started>
+    │    └ <function subprocess_started at 0x0000022A87F26830>
+    └ <SpawnProcess name='SpawnProcess-4' parent=16412 started>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\uvicorn\_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    │              └ [<socket.socket fd=332, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 8000)>]
+    └ <bound method Server.run of <uvicorn.server.Server object at 0x0000022A8561B760>>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ [<socket.socket fd=332, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 8000)>]
+           │       │   │    └ <function Server.serve at 0x0000022A87EFF250>
+           │       │   └ <uvicorn.server.Server object at 0x0000022A8561B760>
+           │       └ <function run at 0x0000022A877FB490>
+           └ <module 'asyncio' from 'C:\\Users\\Acer\\AppData\\Local\\Programs\\Python\\Python310\\lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object Server.serve at 0x0000022A88071380>
+           │    └ <function BaseEventLoop.run_until_complete at 0x0000022A87800EE0>
+           └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 636, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x0000022A87800E50>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 603, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000022A87802950>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1909, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x0000022A87762170>
+    └ <Handle Task.task_wakeup(<Future finis...022AA7C57070>>)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finis...022AA7C57070>>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finis...022AA7C57070>>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finis...022AA7C57070>>)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+          │    │   │      │                      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x0000022AA7CC2D40>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000022AA7CC2830>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.cors.CORSMiddleware object at 0x0000022AA7BE3670>
+          └ <starlette.middleware.base.BaseHTTPMiddleware object at 0x0000022AA7BE2C80>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+          │    │               │      │        │                     └ Headers({'host': '127.0.0.1:8000', 'connection': 'close', 'content-length': '265401', 'sec-ch-ua-platform': '"Windows"', 'use...
+          │    │               │      │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x0000022AA7CC2D40>
+          │    │               │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000022AA7CC2830>
+          │    │               └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <function CORSMiddleware.simple_response at 0x0000022A89081240>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x0000022AA7BE3670>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+          │    │   │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x0000022AA7BE3670...
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000022AA7CC2830>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000022AA7BE2B90>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x0000022AA7BE3670>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x0000022AA7BE3670...
+          │                            │    │    │     │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000022AA7CC2830>
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x0000022AA7C6CD90>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x0000022AA7C5D1B0>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000022AA7BE2B90>
+          └ <function wrap_app_handling_exceptions at 0x0000022A88FC29E0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000022AA7D27BE0>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000022AA7CC2830>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <fastapi.routing.APIRouter object at 0x0000022AA7C5D1B0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000022AA7D27BE0>
+          │    │                │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000022AA7CC2830>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x0000022AA7C5D1B0>>
+          └ <fastapi.routing.APIRouter object at 0x0000022AA7C5D1B0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000022AA7D27BE0>
+          │     │      │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000022AA7CC2830>
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │     └ <function Route.handle at 0x0000022A88FF0040>
+          └ APIRoute(path='/api/v1/upload', name='upload_ecg_csv', methods=['POST'])
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000022AA7D27BE0>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000022AA7CC2830>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <function request_response.<locals>.app at 0x0000022AA7CC1EA0>
+          └ APIRoute(path='/api/v1/upload', name='upload_ecg_csv', methods=['POST'])
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000022AA7D27BE0>
+          │                            │    │        │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000022AA7CC2830>
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x0000022AA7C6E2F0>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x0000022AA7D27C70>
+          └ <function wrap_app_handling_exceptions at 0x0000022A88FC29E0>
+
+> File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000022AA7D27D00>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000022AA7CC2830>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x0000022AA7D27C70>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+                     │ └ <starlette.requests.Request object at 0x0000022AA7C6E2F0>
+                     └ <function get_request_handler.<locals>.app at 0x0000022AA7CC1E10>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x0000022A88FF1B40>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'inference': <app.ml.inference.StressInference object at 0x0000022AA7C57070>, 'file': UploadFile(filename='sample_ecg.csv', ...
+                 │         └ <function upload_ecg_csv at 0x0000022AA7C8D240>
+                 └ Dependant(path_params=[], query_params=[], header_params=[], cookie_params=[], body_params=[ModelField(field_info=File(Pydant...
+
+  File "D:\Daily_Task\stress_detection_system\backend\app\api\routes\upload.py", line 36, in upload_ecg_csv
+    return service.predict_ecg(ecg.tolist(), fs)
+           │       │           │   │         └ 700.0
+           │       │           │   └ <method 'tolist' of 'numpy.ndarray' objects>
+           │       │           └ array([ 1.96548490e-26,  4.10968622e-03,  8.10453065e-03, ...,
+           │       │                    -1.18733806e-02, -8.10453065e-03, -4.10968622e-03])
+           │       └ <function PredictionService.predict_ecg at 0x0000022AA7C8C430>
+           └ <app.services.prediction_service.PredictionService object at 0x0000022AA7C54C10>
+
+  File "D:\Daily_Task\stress_detection_system\backend\app\services\prediction_service.py", line 28, in predict_ecg
+    self._inference.load_artifacts()
+    │    │          └ <function StressInference.load_artifacts at 0x0000022AA7B72440>
+    │    └ <app.ml.inference.StressInference object at 0x0000022AA7C57070>
+    └ <app.services.prediction_service.PredictionService object at 0x0000022AA7C54C10>
+
+  File "D:\Daily_Task\stress_detection_system\backend\app\ml\inference.py", line 29, in load_artifacts
+    raise InferenceError(
+          └ <class 'app.exceptions.custom_exceptions.InferenceError'>
+
+app.exceptions.custom_exceptions.InferenceError: Missing model artifacts. Train first. Expected models\feature_pipeline.pkl and models\best_model.pkl.
+2026-05-14 14:31:18.138 | INFO     | app.main:log_requests:42 - request completed in 182.29 ms
+2026-05-14 14:35:35.870 | WARNING  | app.ml.trainer:train_demo:306 - DEMO training: synthetic features only — not WESAD / not for research claims. Use train() with real WESAD pickles for production.
+2026-05-14 14:35:35.900 | INFO     | app.ml.trainer:_train_and_save_artifacts:169 - Training model: logistic_regression
+2026-05-14 14:35:35.922 | INFO     | app.ml.trainer:_train_and_save_artifacts:184 - Model logistic_regression ROC-AUC (holdout) = 0.9571
+2026-05-14 14:35:35.922 | INFO     | app.ml.trainer:_train_and_save_artifacts:169 - Training model: random_forest
+2026-05-14 14:35:37.780 | INFO     | app.ml.trainer:_train_and_save_artifacts:184 - Model random_forest ROC-AUC (holdout) = 0.9863
+2026-05-14 14:35:37.782 | INFO     | app.ml.trainer:_train_and_save_artifacts:169 - Training model: svm
+2026-05-14 14:35:37.882 | INFO     | app.ml.trainer:_train_and_save_artifacts:184 - Model svm ROC-AUC (holdout) = 0.9983
+2026-05-14 14:35:37.882 | INFO     | app.ml.trainer:_train_and_save_artifacts:169 - Training model: xgboost
+2026-05-14 14:35:38.379 | INFO     | app.ml.trainer:_train_and_save_artifacts:184 - Model xgboost ROC-AUC (holdout) = 0.9901
+2026-05-14 14:35:38.383 | INFO     | app.ml.trainer:_train_and_save_artifacts:169 - Training model: lightgbm
+2026-05-14 14:35:39.157 | INFO     | app.ml.trainer:_train_and_save_artifacts:184 - Model lightgbm ROC-AUC (holdout) = 0.9928
+2026-05-14 14:35:39.157 | INFO     | app.ml.trainer:_train_and_save_artifacts:169 - Training model: catboost
+2026-05-14 14:35:42.314 | INFO     | app.ml.trainer:_train_and_save_artifacts:184 - Model catboost ROC-AUC (holdout) = 0.9941
+2026-05-14 14:35:42.314 | INFO     | app.ml.trainer:_train_and_save_artifacts:169 - Training model: stacking
+2026-05-14 14:36:05.874 | INFO     | app.ml.trainer:_train_and_save_artifacts:184 - Model stacking ROC-AUC (holdout) = 0.9928
+2026-05-14 14:36:05.876 | INFO     | app.ml.trainer:_train_and_save_artifacts:193 - Best model: svm with ROC-AUC=0.9982637683172443
+2026-05-14 14:36:26.770 | INFO     | app.main:log_requests:42 - request completed in 3.51 ms
+2026-05-14 14:36:26.832 | INFO     | app.main:log_requests:42 - request completed in 7.09 ms
+2026-05-14 14:36:26.918 | INFO     | app.ml.inference:load_artifacts:38 - Loaded inference artifacts from C:\Users\Acer\AppData\Local\Temp\pytest-of-Acer\pytest-8\test_predict_json0\models\feature_pipeline.pkl and C:\Users\Acer\AppData\Local\Temp\pytest-of-Acer\pytest-8\test_predict_json0\models\best_model.pkl
+2026-05-14 14:36:26.960 | WARNING  | app.preprocessing.peak_detection:detect_r_peaks:72 - HeartPy peak detection failed: 
+----------------
+Could not determine best fit for given signal. Please check the source signal.
+ Probable causes:
+- detected heart rate falls outside of bpmmin<->bpmmax constraints
+- no detectable heart rate present in signal
+- very noisy signal (consider filtering and scaling)
+If you're sure the signal contains heartrate data, consider filtering and/or scaling first.
+----------------
+
+2026-05-14 14:36:27.043 | INFO     | app.main:log_requests:42 - request completed in 139.99 ms
+2026-05-14 14:36:27.136 | INFO     | app.loaders.wesad_loader:list_subject_ids:75 - Discovered 1 WESAD subjects: ['S99']
+2026-05-14 14:37:45.183 | WARNING  | app.ml.trainer:train_demo:306 - DEMO training: synthetic features only — not WESAD / not for research claims. Use train() with real WESAD pickles for production.
+2026-05-14 14:37:45.217 | INFO     | app.ml.trainer:_train_and_save_artifacts:169 - Training model: logistic_regression
+2026-05-14 14:37:45.246 | INFO     | app.ml.trainer:_train_and_save_artifacts:184 - Model logistic_regression ROC-AUC (holdout) = 0.9571
+2026-05-14 14:37:45.248 | INFO     | app.ml.trainer:_train_and_save_artifacts:169 - Training model: random_forest
+2026-05-14 14:37:47.060 | INFO     | app.ml.trainer:_train_and_save_artifacts:184 - Model random_forest ROC-AUC (holdout) = 0.9863
+2026-05-14 14:37:47.063 | INFO     | app.ml.trainer:_train_and_save_artifacts:169 - Training model: svm
+2026-05-14 14:37:47.168 | INFO     | app.ml.trainer:_train_and_save_artifacts:184 - Model svm ROC-AUC (holdout) = 0.9983
+2026-05-14 14:37:47.168 | INFO     | app.ml.trainer:_train_and_save_artifacts:169 - Training model: xgboost
+2026-05-14 14:37:47.750 | INFO     | app.ml.trainer:_train_and_save_artifacts:184 - Model xgboost ROC-AUC (holdout) = 0.9901
+2026-05-14 14:37:47.750 | INFO     | app.ml.trainer:_train_and_save_artifacts:169 - Training model: lightgbm
+2026-05-14 14:37:48.523 | INFO     | app.ml.trainer:_train_and_save_artifacts:184 - Model lightgbm ROC-AUC (holdout) = 0.9928
+2026-05-14 14:37:48.523 | INFO     | app.ml.trainer:_train_and_save_artifacts:169 - Training model: catboost
+2026-05-14 14:37:51.573 | INFO     | app.ml.trainer:_train_and_save_artifacts:184 - Model catboost ROC-AUC (holdout) = 0.9941
+2026-05-14 14:37:51.573 | INFO     | app.ml.trainer:_train_and_save_artifacts:169 - Training model: stacking
+2026-05-14 14:38:12.884 | INFO     | app.ml.trainer:_train_and_save_artifacts:184 - Model stacking ROC-AUC (holdout) = 0.9928
+2026-05-14 14:38:12.884 | INFO     | app.ml.trainer:_train_and_save_artifacts:193 - Best model: svm with ROC-AUC=0.9982637683172443
+2026-05-14 14:38:33.602 | INFO     | app.ml.inference:load_artifacts:38 - Loaded inference artifacts from models\feature_pipeline.pkl and models\best_model.pkl
+2026-05-14 14:38:33.741 | INFO     | app.main:log_requests:42 - request completed in 365.00 ms
+2026-05-14 14:46:55.187 | INFO     | app.ml.inference:load_artifacts:38 - Loaded inference artifacts from models\feature_pipeline.pkl and models\best_model.pkl
+2026-05-14 14:46:55.273 | INFO     | app.main:log_requests:42 - request completed in 170.43 ms
+2026-05-14 14:55:23.057 | INFO     | app.ml.inference:load_artifacts:38 - Loaded inference artifacts from models\feature_pipeline.pkl and models\best_model.pkl
+2026-05-14 14:55:23.197 | INFO     | app.main:log_requests:42 - request completed in 390.26 ms
+2026-05-14 14:56:04.869 | INFO     | app.main:log_requests:42 - request completed in 57.07 ms
+2026-05-14 14:56:04.919 | INFO     | app.main:log_requests:42 - request completed in 25.42 ms
+2026-05-14 14:56:16.769 | INFO     | app.main:log_requests:42 - request completed in 40.25 ms
+2026-05-14 14:56:16.844 | INFO     | app.main:log_requests:42 - request completed in 32.87 ms
+2026-05-14 14:56:28.075 | INFO     | app.main:log_requests:42 - request completed in 48.62 ms
+2026-05-14 14:56:28.153 | INFO     | app.main:log_requests:42 - request completed in 46.98 ms
+2026-05-14 14:56:30.605 | INFO     | app.main:log_requests:42 - request completed in 9.42 ms
+2026-05-14 14:56:30.643 | INFO     | app.main:log_requests:42 - request completed in 8.91 ms
+2026-05-14 15:10:45.362 | INFO     | app.main:log_requests:42 - request completed in 36.82 ms
+2026-05-14 15:10:45.382 | INFO     | app.main:log_requests:42 - request completed in 4.17 ms
+2026-05-14 15:11:51.620 | INFO     | app.ml.inference:load_artifacts:38 - Loaded inference artifacts from models\feature_pipeline.pkl and models\best_model.pkl
+2026-05-14 15:11:51.770 | INFO     | app.main:log_requests:42 - request completed in 494.13 ms
+2026-05-14 15:34:49.914 | INFO     | app.main:log_requests:42 - request completed in 757.71 ms
+2026-05-14 15:35:15.209 | INFO     | app.main:log_requests:42 - request completed in 32.18 ms
+2026-05-14 15:35:15.224 | INFO     | app.main:log_requests:42 - request completed in 45.12 ms
+2026-05-14 15:35:15.224 | INFO     | app.main:log_requests:42 - request completed in 47.38 ms
+2026-05-14 15:35:15.389 | INFO     | app.main:log_requests:42 - request completed in 4.70 ms
+2026-05-14 15:35:15.439 | INFO     | app.main:log_requests:42 - request completed in 5.40 ms
+2026-05-14 15:36:09.490 | INFO     | app.main:log_requests:42 - request completed in 10.68 ms
+2026-05-14 15:36:09.831 | INFO     | app.main:log_requests:42 - request completed in 34.49 ms
+2026-05-14 15:36:10.688 | INFO     | app.ml.inference:load_artifacts:42 - Loaded inference artifacts from C:\Users\Acer\AppData\Local\Temp\pytest-of-Acer\pytest-9\test_predict_json0\models\feature_pipeline.pkl and C:\Users\Acer\AppData\Local\Temp\pytest-of-Acer\pytest-9\test_predict_json0\models\best_model.pkl
+2026-05-14 15:36:10.987 | INFO     | app.main:log_requests:42 - request completed in 434.60 ms
+2026-05-14 15:36:11.654 | ERROR    | app.middleware.error_handler:_inf:60 - Inference error: ECG too short for meaningful HRV analysis. Minimum 60 seconds required.
+Traceback (most recent call last):
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000195F18603A0>
+    └ <Thread(asyncio-portal-19595a16f20, started daemon 22512)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000195F18600D0>
+    └ <Thread(asyncio-portal-19595a16f20, started daemon 22512)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(asyncio-portal-19595a16f20, started daemon 22512)>
+    │    │        │    └ ()
+    │    │        └ <Thread(asyncio-portal-19595a16f20, started daemon 22512)>
+    │    └ <function start_blocking_portal.<locals>.run_blocking_portal at 0x0000019595549480>
+    └ <Thread(asyncio-portal-19595a16f20, started daemon 22512)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\from_thread.py", line 524, in run_blocking_portal
+    run_eventloop(
+    └ <function run at 0x00000195F23B8040>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\_core\_eventloop.py", line 75, in run
+    return async_backend.run(func, args, {}, backend_options)
+           │             │   │     │         └ {}
+           │             │   │     └ ()
+           │             │   └ <function start_blocking_portal.<locals>.run_portal at 0x00000195955493F0>
+           │             └ <classmethod(<function AsyncIOBackend.run at 0x00000195F3E02E60>)>
+           └ <class 'anyio._backends._asyncio.AsyncIOBackend'>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\_backends\_asyncio.py", line 2365, in run
+    return runner.run(wrapper())
+           │      │   └ <function start_blocking_portal.<locals>.run_portal at 0x00000195955495A0>
+           │      └ <function Runner.run at 0x00000195F3DF0AF0>
+           └ <anyio._backends._asyncio.Runner object at 0x0000019595A16D10>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\_backends\_asyncio.py", line 220, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='anyio.from_thread.start_blocking_portal.<locals>.run_portal' coro=<start_blocking_portal.<locals>.run_por...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x00000195F2772440>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <anyio._backends._asyncio.Runner object at 0x0000019595A16D10>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 636, in run_until_complete
+    self.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x00000195F3D9CC10>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 603, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x00000195F2773EB0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1909, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000195F26F37F0>
+    └ <Handle Task.task_wakeup(<Future finis...s required.')>)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finis...s required.')>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finis...s required.')>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finis...s required.')>)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+          │    │   │      │                      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x0000019595549BD0>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000019595549B40>
+          │    │   └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          │    └ <starlette.middleware.cors.CORSMiddleware object at 0x0000019595A174C0>
+          └ <starlette.middleware.base.BaseHTTPMiddleware object at 0x0000019595A17520>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x0000019595549BD0>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000019595549B40>
+          │    │   └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000019595A17490>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x0000019595A174C0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x0000019595549BD0>
+          │                            │    │    │     │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000019595549B40>
+          │                            │    │    │     └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          │                            │    │    └ <starlette.requests.Request object at 0x0000019595A17AF0>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x0000019595532860>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000019595A17490>
+          └ <function wrap_app_handling_exceptions at 0x0000019592EF01F0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000019595549E10>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000019595549B40>
+          │   └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          └ <fastapi.routing.APIRouter object at 0x0000019595532860>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000019595549E10>
+          │    │                │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000019595549B40>
+          │    │                └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x0000019595532860>>
+          └ <fastapi.routing.APIRouter object at 0x0000019595532860>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000019595549E10>
+          │     │      │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000019595549B40>
+          │     │      └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          │     └ <function Route.handle at 0x0000019592EF17E0>
+          └ APIRoute(path='/api/v1/predict', name='predict', methods=['POST'])
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000019595549E10>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000019595549B40>
+          │    │   └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          │    └ <function request_response.<locals>.app at 0x0000019595548310>
+          └ APIRoute(path='/api/v1/predict', name='predict', methods=['POST'])
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000019595549E10>
+          │                            │    │        │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000019595549B40>
+          │                            │    │        └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          │                            │    └ <starlette.requests.Request object at 0x0000019595A17CA0>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x0000019595549EA0>
+          └ <function wrap_app_handling_exceptions at 0x0000019592EF01F0>
+
+> File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000019595549F30>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000019595549B40>
+          │   └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          └ <function request_response.<locals>.app.<locals>.app at 0x0000019595549EA0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+                     │ └ <starlette.requests.Request object at 0x0000019595A17CA0>
+                     └ <function get_request_handler.<locals>.app at 0x0000019595548280>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x0000019592EF32E0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+                 │                 │         │       └ {'inference': <app.ml.inference.StressInference object at 0x00000195959843D0>, 'body': PredictRequest(ecg=[0.0, 0.00538548326...
+                 │                 │         └ <function predict at 0x000001959538DFC0>
+                 │                 └ Dependant(path_params=[], query_params=[], header_params=[], cookie_params=[], body_params=[ModelField(field_info=Body(Pydant...
+                 └ <function run_in_threadpool at 0x0000019592C97400>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+                 │     │         │        └ functools.partial(<function predict at 0x000001959538DFC0>, inference=<app.ml.inference.StressInference object at 0x000001959...
+                 │     │         └ <function run_sync at 0x00000195F23B9870>
+                 │     └ <module 'anyio.to_thread' from 'C:\\Users\\Acer\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\anyio\\to_t...
+                 └ <module 'anyio' from 'C:\\Users\\Acer\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\anyio\\__init__.py'>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\to_thread.py", line 61, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+                 └ <function get_async_backend at 0x00000195F23B8820>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\_backends\_asyncio.py", line 2525, in run_sync_in_worker_thread
+    return await future
+                 └ <Future finished exception=InferenceError('ECG too short for meaningful HRV analysis. Minimum 60 seconds required.')>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+
+  File "D:\Daily_Task\stress_detection_system\backend\app\api\routes\predict.py", line 16, in predict
+    return service.predict_ecg(body.ecg, body.sampling_rate_hz)
+           │       │           │    │    │    └ 700.0
+           │       │           │    │    └ PredictRequest(ecg=[0.0, 0.005385483269059085, 0.010770341730047135, 0.01615395064738153, 0.021535685430448055, 0.02691492170...
+           │       │           │    └ [0.0, 0.005385483269059085, 0.010770341730047135, 0.01615395064738153, 0.021535685430448055, 0.026914921706064097, 0.03229103...
+           │       │           └ PredictRequest(ecg=[0.0, 0.005385483269059085, 0.010770341730047135, 0.01615395064738153, 0.021535685430448055, 0.02691492170...
+           │       └ <function PredictionService.predict_ecg at 0x000001959538E560>
+           └ <app.services.prediction_service.PredictionService object at 0x0000019595984190>
+
+  File "D:\Daily_Task\stress_detection_system\backend\app\services\prediction_service.py", line 68, in predict_ecg
+    raise InferenceError("ECG too short for meaningful HRV analysis. Minimum 60 seconds required.")
+          └ <class 'app.exceptions.custom_exceptions.InferenceError'>
+
+app.exceptions.custom_exceptions.InferenceError: ECG too short for meaningful HRV analysis. Minimum 60 seconds required.
+2026-05-14 15:36:12.711 | INFO     | app.main:log_requests:42 - request completed in 1222.35 ms
+2026-05-14 15:39:44.914 | INFO     | app.main:log_requests:42 - request completed in 8.21 ms
+2026-05-14 15:39:45.070 | INFO     | app.main:log_requests:42 - request completed in 12.50 ms
+2026-05-14 15:39:45.424 | INFO     | app.ml.inference:load_artifacts:42 - Loaded inference artifacts from C:\Users\Acer\AppData\Local\Temp\pytest-of-Acer\pytest-10\test_predict_json0\models\feature_pipeline.pkl and C:\Users\Acer\AppData\Local\Temp\pytest-of-Acer\pytest-10\test_predict_json0\models\best_model.pkl
+2026-05-14 15:39:45.710 | INFO     | app.main:log_requests:42 - request completed in 358.67 ms
+2026-05-14 15:39:45.839 | ERROR    | app.middleware.error_handler:_inf:60 - Inference error: ECG too short for meaningful HRV analysis. Minimum 60 seconds required.
+Traceback (most recent call last):
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000015E1D7D03A0>
+    └ <Thread(asyncio-portal-15e411ae500, started daemon 9672)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000015E1D7D00D0>
+    └ <Thread(asyncio-portal-15e411ae500, started daemon 9672)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(asyncio-portal-15e411ae500, started daemon 9672)>
+    │    │        │    └ ()
+    │    │        └ <Thread(asyncio-portal-15e411ae500, started daemon 9672)>
+    │    └ <function start_blocking_portal.<locals>.run_blocking_portal at 0x0000015E4131FA30>
+    └ <Thread(asyncio-portal-15e411ae500, started daemon 9672)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\from_thread.py", line 524, in run_blocking_portal
+    run_eventloop(
+    └ <function run at 0x0000015E1E344040>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\_core\_eventloop.py", line 75, in run
+    return async_backend.run(func, args, {}, backend_options)
+           │             │   │     │         └ {}
+           │             │   │     └ ()
+           │             │   └ <function start_blocking_portal.<locals>.run_portal at 0x0000015E4131F9A0>
+           │             └ <classmethod(<function AsyncIOBackend.run at 0x0000015E1FDC2E60>)>
+           └ <class 'anyio._backends._asyncio.AsyncIOBackend'>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\_backends\_asyncio.py", line 2365, in run
+    return runner.run(wrapper())
+           │      │   └ <function start_blocking_portal.<locals>.run_portal at 0x0000015E4131FB50>
+           │      └ <function Runner.run at 0x0000015E1FDB0AF0>
+           └ <anyio._backends._asyncio.Runner object at 0x0000015E21882680>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\_backends\_asyncio.py", line 220, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='anyio.from_thread.start_blocking_portal.<locals>.run_portal' coro=<start_blocking_portal.<locals>.run_por...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000015E1FCFE440>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <anyio._backends._asyncio.Runner object at 0x0000015E21882680>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 636, in run_until_complete
+    self.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x0000015E1FD5CC10>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 603, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000015E1FCFFEB0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1909, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x0000015E1FC837F0>
+    └ <Handle Task.task_wakeup(<Future finis...s required.')>)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finis...s required.')>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finis...s required.')>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finis...s required.')>)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+          │    │   │      │                      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x0000015E413581F0>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000015E41358160>
+          │    │   └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          │    └ <starlette.middleware.cors.CORSMiddleware object at 0x0000015E411AC3D0>
+          └ <starlette.middleware.base.BaseHTTPMiddleware object at 0x0000015E411AE350>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x0000015E413581F0>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000015E41358160>
+          │    │   └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000015E411AC460>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x0000015E411AC3D0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x0000015E413581F0>
+          │                            │    │    │     │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000015E41358160>
+          │                            │    │    │     └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          │                            │    │    └ <starlette.requests.Request object at 0x0000015E411AD2D0>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x0000015E411B2170>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000015E411AC460>
+          └ <function wrap_app_handling_exceptions at 0x0000015E2D0E1360>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000015E41358430>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000015E41358160>
+          │   └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          └ <fastapi.routing.APIRouter object at 0x0000015E411B2170>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000015E41358430>
+          │    │                │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000015E41358160>
+          │    │                └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x0000015E411B2170>>
+          └ <fastapi.routing.APIRouter object at 0x0000015E411B2170>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000015E41358430>
+          │     │      │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000015E41358160>
+          │     │      └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          │     └ <function Route.handle at 0x0000015E2D0E2950>
+          └ APIRoute(path='/api/v1/predict', name='predict', methods=['POST'])
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000015E41358430>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000015E41358160>
+          │    │   └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          │    └ <function request_response.<locals>.app at 0x0000015E4131E8C0>
+          └ APIRoute(path='/api/v1/predict', name='predict', methods=['POST'])
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000015E41358430>
+          │                            │    │        │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000015E41358160>
+          │                            │    │        └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          │                            │    └ <starlette.requests.Request object at 0x0000015E411ACEB0>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x0000015E413584C0>
+          └ <function wrap_app_handling_exceptions at 0x0000015E2D0E1360>
+
+> File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000015E41358550>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000015E41358160>
+          │   └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          └ <function request_response.<locals>.app.<locals>.app at 0x0000015E413584C0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+                     │ └ <starlette.requests.Request object at 0x0000015E411ACEB0>
+                     └ <function get_request_handler.<locals>.app at 0x0000015E4131E830>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x0000015E2D1004C0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+                 │                 │         │       └ {'inference': <app.ml.inference.StressInference object at 0x0000015E411AEF80>, 'body': PredictRequest(ecg=[0.0, 0.00538548326...
+                 │                 │         └ <function predict at 0x0000015E41167F40>
+                 │                 └ Dependant(path_params=[], query_params=[], header_params=[], cookie_params=[], body_params=[ModelField(field_info=Body(Pydant...
+                 └ <function run_in_threadpool at 0x0000015E1FFBC4C0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+                 │     │         │        └ functools.partial(<function predict at 0x0000015E41167F40>, inference=<app.ml.inference.StressInference object at 0x0000015E4...
+                 │     │         └ <function run_sync at 0x0000015E1E345870>
+                 │     └ <module 'anyio.to_thread' from 'C:\\Users\\Acer\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\anyio\\to_t...
+                 └ <module 'anyio' from 'C:\\Users\\Acer\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\anyio\\__init__.py'>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\to_thread.py", line 61, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+                 └ <function get_async_backend at 0x0000015E1E344820>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\_backends\_asyncio.py", line 2525, in run_sync_in_worker_thread
+    return await future
+                 └ <Future finished exception=InferenceError('ECG too short for meaningful HRV analysis. Minimum 60 seconds required.')>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+
+  File "D:\Daily_Task\stress_detection_system\backend\app\api\routes\predict.py", line 16, in predict
+    return service.predict_ecg(body.ecg, body.sampling_rate_hz)
+           │       │           │    │    │    └ 700.0
+           │       │           │    │    └ PredictRequest(ecg=[0.0, 0.005385483269059085, 0.010770341730047135, 0.01615395064738153, 0.021535685430448055, 0.02691492170...
+           │       │           │    └ [0.0, 0.005385483269059085, 0.010770341730047135, 0.01615395064738153, 0.021535685430448055, 0.026914921706064097, 0.03229103...
+           │       │           └ PredictRequest(ecg=[0.0, 0.005385483269059085, 0.010770341730047135, 0.01615395064738153, 0.021535685430448055, 0.02691492170...
+           │       └ <function PredictionService.predict_ecg at 0x0000015E411E44C0>
+           └ <app.services.prediction_service.PredictionService object at 0x0000015E411AD1E0>
+
+  File "D:\Daily_Task\stress_detection_system\backend\app\services\prediction_service.py", line 68, in predict_ecg
+    raise InferenceError("ECG too short for meaningful HRV analysis. Minimum 60 seconds required.")
+          └ <class 'app.exceptions.custom_exceptions.InferenceError'>
+
+app.exceptions.custom_exceptions.InferenceError: ECG too short for meaningful HRV analysis. Minimum 60 seconds required.
+2026-05-14 15:39:46.070 | INFO     | app.main:log_requests:42 - request completed in 245.98 ms
+2026-05-14 15:39:46.928 | INFO     | app.loaders.wesad_loader:list_subject_ids:75 - Discovered 1 WESAD subjects: ['S99']
+2026-05-14 15:42:05.343 | INFO     | app.main:log_requests:42 - request completed in 4.67 ms
+2026-05-14 15:42:05.404 | INFO     | app.main:log_requests:42 - request completed in 5.20 ms
+2026-05-14 15:42:05.633 | INFO     | app.ml.inference:load_artifacts:42 - Loaded inference artifacts from C:\Users\Acer\AppData\Local\Temp\pytest-of-Acer\pytest-11\test_predict_json0\models\feature_pipeline.pkl and C:\Users\Acer\AppData\Local\Temp\pytest-of-Acer\pytest-11\test_predict_json0\models\best_model.pkl
+2026-05-14 15:42:05.774 | INFO     | app.main:log_requests:42 - request completed in 185.24 ms
+2026-05-14 15:42:05.852 | ERROR    | app.middleware.error_handler:_inf:60 - Inference error: ECG too short for meaningful HRV analysis. Minimum 60 seconds required.
+Traceback (most recent call last):
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000001F6430303A0>
+    └ <Thread(asyncio-portal-1f66694d600, started daemon 25300)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000001F6430300D0>
+    └ <Thread(asyncio-portal-1f66694d600, started daemon 25300)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(asyncio-portal-1f66694d600, started daemon 25300)>
+    │    │        │    └ ()
+    │    │        └ <Thread(asyncio-portal-1f66694d600, started daemon 25300)>
+    │    └ <function start_blocking_portal.<locals>.run_blocking_portal at 0x000001F666ABBC70>
+    └ <Thread(asyncio-portal-1f66694d600, started daemon 25300)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\from_thread.py", line 524, in run_blocking_portal
+    run_eventloop(
+    └ <function run at 0x000001F643C04040>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\_core\_eventloop.py", line 75, in run
+    return async_backend.run(func, args, {}, backend_options)
+           │             │   │     │         └ {}
+           │             │   │     └ ()
+           │             │   └ <function start_blocking_portal.<locals>.run_portal at 0x000001F666ABBBE0>
+           │             └ <classmethod(<function AsyncIOBackend.run at 0x000001F645652E60>)>
+           └ <class 'anyio._backends._asyncio.AsyncIOBackend'>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\_backends\_asyncio.py", line 2365, in run
+    return runner.run(wrapper())
+           │      │   └ <function start_blocking_portal.<locals>.run_portal at 0x000001F666ABBD90>
+           │      └ <function Runner.run at 0x000001F645640AF0>
+           └ <anyio._backends._asyncio.Runner object at 0x000001F66694D420>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\_backends\_asyncio.py", line 220, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='anyio.from_thread.start_blocking_portal.<locals>.run_portal' coro=<start_blocking_portal.<locals>.run_por...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x000001F64557E440>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <anyio._backends._asyncio.Runner object at 0x000001F66694D420>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 636, in run_until_complete
+    self.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x000001F6455ECC10>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 603, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x000001F64557FEB0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1909, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x000001F6455037F0>
+    └ <Handle Task.task_wakeup(<Future finis...s required.')>)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finis...s required.')>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finis...s required.')>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finis...s required.')>)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+          │    │   │      │                      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x000001F666B083A0>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001F666B08310>
+          │    │   └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          │    └ <starlette.middleware.cors.CORSMiddleware object at 0x000001F66694DC00>
+          └ <starlette.middleware.base.BaseHTTPMiddleware object at 0x000001F66694DC60>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x000001F666B083A0>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001F666B08310>
+          │    │   └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x000001F66694DBD0>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x000001F66694DC00>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x000001F666B083A0>
+          │                            │    │    │     │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001F666B08310>
+          │                            │    │    │     └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          │                            │    │    └ <starlette.requests.Request object at 0x000001F66694E230>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x000001F6668C5330>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x000001F66694DBD0>
+          └ <function wrap_app_handling_exceptions at 0x000001F652985360>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001F666B08700>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001F666B08310>
+          │   └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          └ <fastapi.routing.APIRouter object at 0x000001F6668C5330>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001F666B08700>
+          │    │                │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001F666B08310>
+          │    │                └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x000001F6668C5330>>
+          └ <fastapi.routing.APIRouter object at 0x000001F6668C5330>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001F666B08700>
+          │     │      │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001F666B08310>
+          │     │      └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          │     └ <function Route.handle at 0x000001F652986950>
+          └ APIRoute(path='/api/v1/predict', name='predict', methods=['POST'])
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001F666B08700>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001F666B08310>
+          │    │   └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          │    └ <function request_response.<locals>.app at 0x000001F666ABAB00>
+          └ APIRoute(path='/api/v1/predict', name='predict', methods=['POST'])
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001F666B08700>
+          │                            │    │        │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001F666B08310>
+          │                            │    │        └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          │                            │    └ <starlette.requests.Request object at 0x000001F66694E3E0>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x000001F666B08790>
+          └ <function wrap_app_handling_exceptions at 0x000001F652985360>
+
+> File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001F666B08820>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001F666B08310>
+          │   └ {'type': 'http', 'http_version': '1.1', 'method': 'POST', 'path': '/api/v1/predict', 'raw_path': b'/api/v1/predict', 'root_pa...
+          └ <function request_response.<locals>.app.<locals>.app at 0x000001F666B08790>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+                     │ └ <starlette.requests.Request object at 0x000001F66694E3E0>
+                     └ <function get_request_handler.<locals>.app at 0x000001F666ABAA70>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x000001F6529A04C0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+                 │                 │         │       └ {'inference': <app.ml.inference.StressInference object at 0x000001F66694E8F0>, 'body': PredictRequest(ecg=[0.0, 0.00538548326...
+                 │                 │         └ <function predict at 0x000001F666968040>
+                 │                 └ Dependant(path_params=[], query_params=[], header_params=[], cookie_params=[], body_params=[ModelField(field_info=Body(Pydant...
+                 └ <function run_in_threadpool at 0x000001F6458604C0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+                 │     │         │        └ functools.partial(<function predict at 0x000001F666968040>, inference=<app.ml.inference.StressInference object at 0x000001F66...
+                 │     │         └ <function run_sync at 0x000001F643C05870>
+                 │     └ <module 'anyio.to_thread' from 'C:\\Users\\Acer\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\anyio\\to_t...
+                 └ <module 'anyio' from 'C:\\Users\\Acer\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\anyio\\__init__.py'>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\to_thread.py", line 61, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+                 └ <function get_async_backend at 0x000001F643C04820>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\_backends\_asyncio.py", line 2525, in run_sync_in_worker_thread
+    return await future
+                 └ <Future finished exception=InferenceError('ECG too short for meaningful HRV analysis. Minimum 60 seconds required.')>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
+    result = context.run(func, *args)
+
+  File "D:\Daily_Task\stress_detection_system\backend\app\api\routes\predict.py", line 16, in predict
+    return service.predict_ecg(body.ecg, body.sampling_rate_hz)
+           │       │           │    │    │    └ 700.0
+           │       │           │    │    └ PredictRequest(ecg=[0.0, 0.005385483269059085, 0.010770341730047135, 0.01615395064738153, 0.021535685430448055, 0.02691492170...
+           │       │           │    └ [0.0, 0.005385483269059085, 0.010770341730047135, 0.01615395064738153, 0.021535685430448055, 0.026914921706064097, 0.03229103...
+           │       │           └ PredictRequest(ecg=[0.0, 0.005385483269059085, 0.010770341730047135, 0.01615395064738153, 0.021535685430448055, 0.02691492170...
+           │       └ <function PredictionService.predict_ecg at 0x000001F666968550>
+           └ <app.services.prediction_service.PredictionService object at 0x000001F66694E1D0>
+
+  File "D:\Daily_Task\stress_detection_system\backend\app\services\prediction_service.py", line 68, in predict_ecg
+    raise InferenceError("ECG too short for meaningful HRV analysis. Minimum 60 seconds required.")
+          └ <class 'app.exceptions.custom_exceptions.InferenceError'>
+
+app.exceptions.custom_exceptions.InferenceError: ECG too short for meaningful HRV analysis. Minimum 60 seconds required.
+2026-05-14 15:42:05.983 | INFO     | app.main:log_requests:42 - request completed in 138.91 ms
+2026-05-14 15:42:06.385 | INFO     | app.loaders.wesad_loader:list_subject_ids:75 - Discovered 1 WESAD subjects: ['S99']
+2026-05-14 15:53:09.331 | ERROR    | app.middleware.error_handler:_inf:60 - Inference error: ECG too short for meaningful HRV analysis. Minimum 60 seconds required.
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\multiprocessing\spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               │     │   └ 380
+               │     └ 3
+               └ <function _main at 0x000001A8817B0EE0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\multiprocessing\spawn.py", line 129, in _main
+    return self._bootstrap(parent_sentinel)
+           │    │          └ 380
+           │    └ <function BaseProcess._bootstrap at 0x000001A8816E7370>
+           └ <SpawnProcess name='SpawnProcess-13' parent=16412 started>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+    │    └ <function BaseProcess.run at 0x000001A8816E69E0>
+    └ <SpawnProcess name='SpawnProcess-13' parent=16412 started>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {'config': <uvicorn.config.Config object at 0x000001A88127B790>, 'target': <bound method Server.run of <uvicorn.server.Server...
+    │    │        │    │        └ <SpawnProcess name='SpawnProcess-13' parent=16412 started>
+    │    │        │    └ ()
+    │    │        └ <SpawnProcess name='SpawnProcess-13' parent=16412 started>
+    │    └ <function subprocess_started at 0x000001A883B96830>
+    └ <SpawnProcess name='SpawnProcess-13' parent=16412 started>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\uvicorn\_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    │              └ [<socket.socket fd=760, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 8000)>]
+    └ <bound method Server.run of <uvicorn.server.Server object at 0x000001A88127B760>>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ [<socket.socket fd=760, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 8000)>]
+           │       │   │    └ <function Server.serve at 0x000001A883B6F250>
+           │       │   └ <uvicorn.server.Server object at 0x000001A88127B760>
+           │       └ <function run at 0x000001A88346B490>
+           └ <module 'asyncio' from 'C:\\Users\\Acer\\AppData\\Local\\Programs\\Python\\Python310\\lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object Server.serve at 0x000001A883CE1380>
+           │    └ <function BaseEventLoop.run_until_complete at 0x000001A883470EE0>
+           └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 636, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x000001A883470E50>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 603, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x000001A883472950>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1909, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x000001A8833D2170>
+    └ <Handle Task.task_wakeup(<Future finis...01A8A389C4C0>>)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finis...01A8A389C4C0>>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finis...01A8A389C4C0>>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finis...01A8A389C4C0>>)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+          │    │   │      │                      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x000001A8A38FBD90>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001A8A38FB880>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.cors.CORSMiddleware object at 0x000001A8A382CD60>
+          └ <starlette.middleware.base.BaseHTTPMiddleware object at 0x000001A8A382CC40>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+          │    │               │      │        │                     └ Headers({'host': '127.0.0.1:8000', 'connection': 'close', 'content-length': '265401', 'sec-ch-ua-platform': '"Windows"', 'use...
+          │    │               │      │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x000001A8A38FBD90>
+          │    │               │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001A8A38FB880>
+          │    │               └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <function CORSMiddleware.simple_response at 0x000001A884D21240>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x000001A8A382CD60>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+          │    │   │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x000001A8A382CD60...
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001A8A38FB880>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x000001A8A382C9A0>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x000001A8A382CD60>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x000001A8A382CD60...
+          │                            │    │    │     │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001A8A38FB880>
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x000001A8A389C220>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x000001A8A38A3280>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x000001A8A382C9A0>
+          └ <function wrap_app_handling_exceptions at 0x000001A884C629E0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001A8A398CB80>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001A8A38FB880>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <fastapi.routing.APIRouter object at 0x000001A8A38A3280>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001A8A398CB80>
+          │    │                │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001A8A38FB880>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x000001A8A38A3280>>
+          └ <fastapi.routing.APIRouter object at 0x000001A8A38A3280>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001A8A398CB80>
+          │     │      │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001A8A38FB880>
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │     └ <function Route.handle at 0x000001A884C90040>
+          └ APIRoute(path='/api/v1/upload', name='upload_ecg_csv', methods=['POST'])
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001A8A398CB80>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001A8A38FB880>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <function request_response.<locals>.app at 0x000001A8A38FAEF0>
+          └ APIRoute(path='/api/v1/upload', name='upload_ecg_csv', methods=['POST'])
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001A8A398CB80>
+          │                            │    │        │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001A8A38FB880>
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x000001A8A389E320>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x000001A8A398CC10>
+          └ <function wrap_app_handling_exceptions at 0x000001A884C629E0>
+
+> File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001A8A398CCA0>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001A8A38FB880>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x000001A8A398CC10>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+                     │ └ <starlette.requests.Request object at 0x000001A8A389E320>
+                     └ <function get_request_handler.<locals>.app at 0x000001A8A38FAE60>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x000001A884C91B40>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'inference': <app.ml.inference.StressInference object at 0x000001A8A389C4C0>, 'file': UploadFile(filename='sample_ecg.csv', ...
+                 │         └ <function upload_ecg_csv at 0x000001A8A38C4AF0>
+                 └ Dependant(path_params=[], query_params=[], header_params=[], cookie_params=[], body_params=[ModelField(field_info=File(Pydant...
+
+  File "D:\Daily_Task\stress_detection_system\backend\app\api\routes\upload.py", line 36, in upload_ecg_csv
+    return service.predict_ecg(ecg.tolist(), fs)
+           │       │           │   │         └ 700.0
+           │       │           │   └ <method 'tolist' of 'numpy.ndarray' objects>
+           │       │           └ array([ 1.96548490e-26,  4.10968622e-03,  8.10453065e-03, ...,
+           │       │                    -1.18733806e-02, -8.10453065e-03, -4.10968622e-03])
+           │       └ <function PredictionService.predict_ecg at 0x000001A8A38C5E10>
+           └ <app.services.prediction_service.PredictionService object at 0x000001A8A389ED70>
+
+  File "D:\Daily_Task\stress_detection_system\backend\app\services\prediction_service.py", line 68, in predict_ecg
+    raise InferenceError("ECG too short for meaningful HRV analysis. Minimum 60 seconds required.")
+          └ <class 'app.exceptions.custom_exceptions.InferenceError'>
+
+app.exceptions.custom_exceptions.InferenceError: ECG too short for meaningful HRV analysis. Minimum 60 seconds required.
+2026-05-14 15:53:09.456 | INFO     | app.main:log_requests:42 - request completed in 525.63 ms
+2026-05-14 15:55:45.389 | ERROR    | app.middleware.error_handler:_inf:60 - Inference error: ECG too short for meaningful HRV analysis. Minimum 60 seconds required.
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\multiprocessing\spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               │     │   └ 380
+               │     └ 3
+               └ <function _main at 0x000001A8817B0EE0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\multiprocessing\spawn.py", line 129, in _main
+    return self._bootstrap(parent_sentinel)
+           │    │          └ 380
+           │    └ <function BaseProcess._bootstrap at 0x000001A8816E7370>
+           └ <SpawnProcess name='SpawnProcess-13' parent=16412 started>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+    │    └ <function BaseProcess.run at 0x000001A8816E69E0>
+    └ <SpawnProcess name='SpawnProcess-13' parent=16412 started>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {'config': <uvicorn.config.Config object at 0x000001A88127B790>, 'target': <bound method Server.run of <uvicorn.server.Server...
+    │    │        │    │        └ <SpawnProcess name='SpawnProcess-13' parent=16412 started>
+    │    │        │    └ ()
+    │    │        └ <SpawnProcess name='SpawnProcess-13' parent=16412 started>
+    │    └ <function subprocess_started at 0x000001A883B96830>
+    └ <SpawnProcess name='SpawnProcess-13' parent=16412 started>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\uvicorn\_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    │              └ [<socket.socket fd=760, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 8000)>]
+    └ <bound method Server.run of <uvicorn.server.Server object at 0x000001A88127B760>>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ [<socket.socket fd=760, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('127.0.0.1', 8000)>]
+           │       │   │    └ <function Server.serve at 0x000001A883B6F250>
+           │       │   └ <uvicorn.server.Server object at 0x000001A88127B760>
+           │       └ <function run at 0x000001A88346B490>
+           └ <module 'asyncio' from 'C:\\Users\\Acer\\AppData\\Local\\Programs\\Python\\Python310\\lib\\asyncio\\__init__.py'>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object Server.serve at 0x000001A883CE1380>
+           │    └ <function BaseEventLoop.run_until_complete at 0x000001A883470EE0>
+           └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 636, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x000001A883470E50>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 603, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x000001A883472950>
+    └ <_WindowsSelectorEventLoop running=True closed=False debug=False>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 1909, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x000001A8833D2170>
+    └ <Handle Task.task_wakeup(<Future finis...01A8A389D8D0>>)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finis...01A8A389D8D0>>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finis...01A8A389D8D0>>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finis...01A8A389D8D0>>)>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+          │    │   │      │                      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x000001A8A398CD30>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001A8A398CAF0>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.cors.CORSMiddleware object at 0x000001A8A382CD60>
+          └ <starlette.middleware.base.BaseHTTPMiddleware object at 0x000001A8A382CC40>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+          │    │               │      │        │                     └ Headers({'host': '127.0.0.1:8000', 'connection': 'close', 'content-length': '265401', 'sec-ch-ua-platform': '"Windows"', 'use...
+          │    │               │      │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x000001A8A398CD30>
+          │    │               │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001A8A398CAF0>
+          │    │               └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <function CORSMiddleware.simple_response at 0x000001A884D21240>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x000001A8A382CD60>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+          │    │   │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x000001A8A382CD60...
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001A8A398CAF0>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x000001A8A382C9A0>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x000001A8A382CD60>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x000001A8A382CD60...
+          │                            │    │    │     │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001A8A398CAF0>
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x000001A8A389FA60>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x000001A8A38A3280>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x000001A8A382C9A0>
+          └ <function wrap_app_handling_exceptions at 0x000001A884C629E0>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001A8A3AABAC0>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001A8A398CAF0>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <fastapi.routing.APIRouter object at 0x000001A8A38A3280>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001A8A3AABAC0>
+          │    │                │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001A8A398CAF0>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x000001A8A38A3280>>
+          └ <fastapi.routing.APIRouter object at 0x000001A8A38A3280>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001A8A3AABAC0>
+          │     │      │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001A8A398CAF0>
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │     └ <function Route.handle at 0x000001A884C90040>
+          └ APIRoute(path='/api/v1/upload', name='upload_ecg_csv', methods=['POST'])
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001A8A3AABAC0>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001A8A398CAF0>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <function request_response.<locals>.app at 0x000001A8A38FAEF0>
+          └ APIRoute(path='/api/v1/upload', name='upload_ecg_csv', methods=['POST'])
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001A8A3AABAC0>
+          │                            │    │        │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001A8A398CAF0>
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x000001A8A389FCD0>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x000001A8A3AABF40>
+          └ <function wrap_app_handling_exceptions at 0x000001A884C629E0>
+
+> File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001A8A3AABEB0>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001A8A398CAF0>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x000001A8A3AABF40>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+                     │ └ <starlette.requests.Request object at 0x000001A8A389FCD0>
+                     └ <function get_request_handler.<locals>.app at 0x000001A8A38FAE60>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x000001A884C91B40>
+
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'inference': <app.ml.inference.StressInference object at 0x000001A8A389D8D0>, 'file': UploadFile(filename='sample_ecg.csv', ...
+                 │         └ <function upload_ecg_csv at 0x000001A8A38C4AF0>
+                 └ Dependant(path_params=[], query_params=[], header_params=[], cookie_params=[], body_params=[ModelField(field_info=File(Pydant...
+
+  File "D:\Daily_Task\stress_detection_system\backend\app\api\routes\upload.py", line 36, in upload_ecg_csv
+    return service.predict_ecg(ecg.tolist(), fs)
+           │       │           │   │         └ 700.0
+           │       │           │   └ <method 'tolist' of 'numpy.ndarray' objects>
+           │       │           └ array([ 1.96548490e-26,  4.10968622e-03,  8.10453065e-03, ...,
+           │       │                    -1.18733806e-02, -8.10453065e-03, -4.10968622e-03])
+           │       └ <function PredictionService.predict_ecg at 0x000001A8A38C5E10>
+           └ <app.services.prediction_service.PredictionService object at 0x000001A8A389CAC0>
+
+  File "D:\Daily_Task\stress_detection_system\backend\app\services\prediction_service.py", line 68, in predict_ecg
+    raise InferenceError("ECG too short for meaningful HRV analysis. Minimum 60 seconds required.")
+          └ <class 'app.exceptions.custom_exceptions.InferenceError'>
+
+app.exceptions.custom_exceptions.InferenceError: ECG too short for meaningful HRV analysis. Minimum 60 seconds required.
+2026-05-14 15:55:45.479 | INFO     | app.main:log_requests:42 - request completed in 237.85 ms
+2026-05-14 15:58:37.841 | INFO     | app.ml.inference:load_artifacts:42 - Loaded inference artifacts from models\feature_pipeline.pkl and models\best_model.pkl
+2026-05-14 15:58:38.280 | INFO     | app.main:log_requests:42 - request completed in 726.58 ms

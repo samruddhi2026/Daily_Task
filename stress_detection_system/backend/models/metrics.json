@@ -1,0 +1,110 @@
+{
+  "model_name": "svm",
+  "holdout_roc_auc_by_model": {
+    "logistic_regression": 0.9571498020695881,
+    "random_forest": 0.9862837697062296,
+    "svm": 0.9982637683172443,
+    "xgboost": 0.9900687547746371,
+    "lightgbm": 0.9928467254670463,
+    "catboost": 0.9940968122786304,
+    "stacking": 0.9928467254670463
+  },
+  "test_metrics": {
+    "accuracy": 0.9875,
+    "precision": 1.0,
+    "recall": 0.9752066115702479,
+    "f1": 0.9874476987447699,
+    "confusion_matrix": {
+      "matrix": [
+        [
+          119,
+          0
+        ],
+        [
+          3,
+          118
+        ]
+      ],
+      "labels": [
+        "non-stress (0)",
+        "stress (1)"
+      ]
+    },
+    "classification_report": "              precision    recall  f1-score   support\n\n  non-stress       0.98      1.00      0.99       119\n      stress       1.00      0.98      0.99       121\n\n    accuracy                           0.99       240\n   macro avg       0.99      0.99      0.99       240\nweighted avg       0.99      0.99      0.99       240\n",
+    "roc_auc": 0.9982637683172443,
+    "roc_curve": {
+      "fpr": [
+        0.0,
+        0.0,
+        0.0,
+        0.01680672268907563,
+        0.01680672268907563,
+        0.05042016806722689,
+        0.05042016806722689,
+        0.14285714285714285,
+        0.14285714285714285,
+        1.0
+      ],
+      "tpr": [
+        0.0,
+        0.008264462809917356,
+        0.9752066115702479,
+        0.9752066115702479,
+        0.9834710743801653,
+        0.9834710743801653,
+        0.9917355371900827,
+        0.9917355371900827,
+        1.0,
+        1.0
+      ],
+      "thresholds": [
+        Infinity,
+        0.9999999763503534,
+        0.5184822395471297,
+        0.40537145844058453,
+        0.37550136757221825,
+        0.2519757174489968,
+        0.1690895156386001,
+        0.07733592714541954,
+        0.0736290150559006,
+        8.700685589666921e-05
+      ]
+    }
+  },
+  "cv_roc_auc_mean": 0.9912976629853197,
+  "cv_roc_auc_std": 0.008884907074868711,
+  "cv_roc_auc_folds": [
+    0.9970699945740641,
+    0.9992403689636463,
+    0.9977213541666666,
+    0.9864366319444444,
+    0.9760199652777778
+  ],
+  "feature_names": [
+    "mean_hr",
+    "min_hr",
+    "max_hr",
+    "std_hr",
+    "mean_rr",
+    "sdnn",
+    "rmssd",
+    "pnn50",
+    "lf",
+    "hf",
+    "lf_hf_ratio",
+    "total_power",
+    "vlf",
+    "sample_entropy",
+    "approximate_entropy",
+    "sd1",
+    "sd2",
+    "stress_index"
+  ],
+  "feature_importance": [],
+  "plots": {
+    "confusion_matrix": "models\\plots\\confusion_matrix.png",
+    "roc_curve": "models\\plots\\roc_curve.png"
+  },
+  "data_source": "synthetic_demo",
+  "disclaimer": "Trained on sklearn synthetic data for artifact smoke test only."
+}

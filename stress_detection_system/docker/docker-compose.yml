@@ -1,0 +1,33 @@
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.backend
+    environment:
+      WESAD_DATA_DIR: /data/wesad
+      MODELS_DIR: /app/backend/models
+      LOGS_DIR: /app/backend/logs
+    volumes:
+      - wesad_data:/data/wesad
+      - model_artifacts:/app/backend/models
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.frontend
+    depends_on:
+      - backend
+    ports:
+      - "8080:80"
+
+volumes:
+  wesad_data:
+  model_artifacts:
