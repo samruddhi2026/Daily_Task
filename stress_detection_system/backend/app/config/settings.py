@@ -19,6 +19,7 @@ class Settings(BaseSettings):
     version: str = Field(default="1.0.0")
     api_v1_prefix: str = Field(default="/api/v1")
     debug: bool = Field(default=False)
+    gemini_api_key: Optional[str] = Field(default=None, description="Google Gemini API Key for AI Insights")
 
     wesad_data_dir: Path = Field(
         default=Path("data/raw/WESAD"),
