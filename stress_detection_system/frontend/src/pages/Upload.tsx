@@ -7,6 +7,7 @@ import { UploadCard } from "../components/UploadCard";
 import { PredictionCard } from "../components/PredictionCard";
 import { uploadCsv } from "../services/api";
 import { getApiErrorMessage } from "../utils/apiError";
+import { DayStatistics } from "../components/DayStatistics";
 
 export function Upload() {
   const [busy, setBusy] = useState(false);
@@ -75,6 +76,7 @@ export function Upload() {
       {error ? <Toast tone="error" message={error} /> : null}
       {chart}
       {prediction ? <PredictionCard data={prediction} /> : null}
+      <DayStatistics />
     </div>
   );
 }
